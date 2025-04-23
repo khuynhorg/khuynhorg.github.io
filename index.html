@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang web chia sẻ</title>
+  <title>Trang Web Cá Nhân</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,45 +12,109 @@
       background-color: #f4f4f4;
     }
 
-    nav {
+    /* Style cho Navbar */
+    .tab-container {
+      display: flex;
+      justify-content: center;
       background-color: #333;
       padding: 10px;
     }
 
-    nav a {
+    .tab {
+      background-color: #444;
       color: white;
-      margin: 0 15px;
-      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
     }
 
-    section {
-      padding: 60px 20px;
-      margin: 20px 0;
-      color: #333;
+    .tab:hover {
+      background-color: #666;
+    }
+
+    /* Style cho phần nội dung các tab */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: white;
       border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
-    #giới-thiệu {
-      background-color: #ffcccb; /* Màu nền hồng */
+    .active {
+      background-color: #ffcccb; /* Màu nền cho tab đã được chọn */
     }
 
-    #danh-sách {
-      background-color: #add8e6; /* Màu nền xanh dương nhạt */
+    .active-content {
+      display: block;
     }
-
-    #bài-chia-sẻ {
-      background-color: #90ee90; /* Màu nền xanh lá cây nhạt */
-    }
-
-    #liên-hệ {
-      background-color: #f0e68c; /* Màu nền vàng nhạt */
-    }
-
   </style>
 </head>
 <body>
 
-  
+  <!-- Navbar với các tab -->
+  <div class="tab-container">
+    <button class="tab" onclick="showTab('giới-thiệu')">Giới thiệu</button>
+    <button class="tab" onclick="showTab('danh-sách')">Danh sách</button>
+    <button class="tab" onclick="showTab('bài-chia-sẻ')">Bài chia sẻ</button>
+    <button class="tab" onclick="showTab('liên-hệ')">Liên hệ</button>
+  </div>
+
+  <!-- Nội dung cho mỗi tab -->
+  <div id="giới-thiệu" class="tab-content">
+    <h2>Giới thiệu</h2>
+    <p>Chào mừng bạn đến với trang web cá nhân của tôi. Tôi là một sinh viên đam mê công nghệ và nghiên cứu.</p>
+  </div>
+
+  <div id="danh-sách" class="tab-content">
+    <h2>Danh sách</h2>
+    <ul>
+      <li>Dự án 1: Xây dựng trang web</li>
+      <li>Dự án 2: Phân tích dữ liệu</li>
+      <li>Dự án 3: Mô hình học máy</li>
+    </ul>
+  </div>
+
+  <div id="bài-chia-sẻ" class="tab-content">
+    <h2>Bài chia sẻ</h2>
+    <ul>
+      <li>Bài chia sẻ 1: Những điều cần biết về lập trình Python</li>
+      <li>Bài chia sẻ 2: Hướng dẫn sử dụng Git hiệu quả</li>
+      <li>Bài chia sẻ 3: Làm quen với học máy và AI</li>
+    </ul>
+  </div>
+
+  <div id="liên-hệ" class="tab-content">
+    <h2>Liên hệ</h2>
+    <p>Để liên hệ với tôi, bạn có thể gửi email đến <strong>email@example.com</strong>.</p>
+  </div>
+
+  <script>
+    // Hàm để hiển thị nội dung của tab được chọn
+    function showTab(tabName) {
+      // Ẩn tất cả các tab-content
+      var contents = document.querySelectorAll('.tab-content');
+      contents.forEach(function(content) {
+        content.classList.remove('active-content');
+      });
+
+      // Loại bỏ class active khỏi tất cả các tab
+      var tabs = document.querySelectorAll('.tab');
+      tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+
+      // Hiển thị tab-content đã chọn và thêm class active vào tab
+      document.getElementById(tabName).classList.add('active-content');
+      event.target.classList.add('active');
+    }
+
+    // Mặc định hiển thị tab Giới thiệu khi trang web tải
+    showTab('giới-thiệu');
+  </script>
 
 </body>
 </html>
