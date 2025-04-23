@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Sync/Khuynh.org/danh-sach"
+		},
+		{
+			"path": "../../../Sync/Khuynh.org/gioi-thieu"
+		},
+		{
+			"path": "../../../Sync/Khuynh.org/lien-he"
+		},
+		{
+			"path": "../../../Sync/Khuynh.org/nghien-cuu"
+		}
+	],
+	"settings": {}
+}
